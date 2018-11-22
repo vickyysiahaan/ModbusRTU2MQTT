@@ -1,0 +1,24 @@
+{
+"1": {"name": "Diris A20",
+	"Address":1,
+	"CommPort": "COM9",
+	"Baudrate": 9600,
+	"Parity": "NONE",
+	"ByteSize": 8,
+	"StopBit": 1,
+	"Timeout": 0.5,
+	"ByteOrder" : "Big Endian",
+	"AccessToken": "K_DirisA20"
+	},
+"2": {"name": "Panasonic KW2M-X",
+	"Address":2,
+	"CommPort": "COM9",
+	"Baudrate": 9600,
+	"Parity": "NONE",
+	"ByteSize": 8,
+	"StopBit": 1,
+	"Timeout": 0.5,
+	"ByteOrder" : "Little Endian",
+	"AccessToken": "A_kw2m-x"
+	}
+}
