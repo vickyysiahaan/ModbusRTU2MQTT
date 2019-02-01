@@ -71,7 +71,9 @@ What you need to know:
    
    for example:
    
+   
    python3.6 Control.py --DeviceNo 1 --VarName I_neutral,V_12 --Value 12.23,380.74
+   
    
    this command will set I_neutral to 12.23 and V_12 to 380.74 in the first Device
    
