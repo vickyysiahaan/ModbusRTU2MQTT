@@ -1,3 +1,7 @@
+# MODBUSRTU2MQTT
+
+This a python program to read data from modbus rtu devices and then publish them to mqtt topics. Configuration can be set by only editing JSON files.
+
 What you need to know:
 1. I assume you: 
 	- have a basic knowledge about Modbus RTU Communication (if you are a beginner, read this http://www.simplymodbus.ca/FAQ.htm)
@@ -71,5 +75,3 @@ What you need to know:
    
    this command will set I_neutral to 12.23 and V_12 to 380.74 in the first Device
    
-
-# MODBUSRTU2MQTT
