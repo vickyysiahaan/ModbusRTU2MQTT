@@ -44,6 +44,7 @@ for i in range(0,len(TopicList)):
 
 #Variables Identity
 AllVar = list()
+AllVarName = list()
 for i in range(1,DevNum+1):
     with open(FolderPath + '/JSON/Config/Device%dVariables.json' %i) as json_data:
         Var=json.load(json_data)
@@ -51,15 +52,23 @@ for i in range(1,DevNum+1):
         VarNum = len(VarID)
 
         _VarID = list()
+        AllVarName.append([])
         for j in range(0,VarNum):
             varid = list(VarID[j].values())
             _VarID.append(varid)
             varTopic = varid[6]
             varName = varid[0]
+            dataType = varid[4]
             for topic in varTopic:
-                VarsPerTopic[topic-1][i-1].append(varName)
+                if dataType != BINARIES:
+                    VarsPerTopic[topic-1][i-1].append(varName)
+                else:
+                    for bit in range(1,17):
+                        VarsPerTopic[topic-1][i-1].append(varName+'_BIT%d'%bit)
+            AllVarName[i-1].append(varName)
         AllVar.append(_VarID)   
 #print(AllVar)
+#print(AllVarName)
 #print(VarsPerTopic)
         
 #### Classify variables based on their register type and data type ####
@@ -142,7 +151,7 @@ Hold_Reg_VarName_%s[i].append(VarName)
 Hold_Reg_Address_%s[i].append(list(range(Reg,Reg+WordLength)))
 Hold_Reg_Multiplier_%s[i].append(Multiplier)
 """%(DataType,DataType,DataType)
-            exec(command)
+            exec(command)   
         elif RegType == INPUTREG:
             command = """
 In_Reg_VarName_%s[i].append(VarName)
