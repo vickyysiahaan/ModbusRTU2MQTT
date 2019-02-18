@@ -1,6 +1,6 @@
 # MODBUSRTU2MQTT
 
-This a python program to read data from modbus rtu devices and then publish them to mqtt topics. Configuration can be set by only editing JSON files.
+This is a python program to read data from modbus rtu devices and then publish them to mqtt topics. Configuration can be set by only editing JSON files.
 
 What you need to know:
 1. I assume you: 
